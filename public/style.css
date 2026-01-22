@@ -585,6 +585,7 @@ body.dark #space {
 /* ================= RESPONSIVE ================= */
 
 /* ---------- Celulares pequenos (a partir de 0px) ---------- */
+@media (min-width: 0px){
 .footer h3 {
   font-size: 1.1rem;
 }
@@ -598,17 +599,14 @@ body.dark #space {
 .footer-info p {
   font-size: 0.75rem;
 }
-
 .highlight a{
-
   color: var(--primary);
-
 }
-
-  .typing-container {
-      justify-content: flex-start; /* em vez de center */
-  }
-
+.typing-container {
+    justify-content: flex-start; /* em vez de center */
+}
+  
+}
 /* ---------- A partir de 600px ---------- */
 @media (min-width: 600px) {
 
