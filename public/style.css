@@ -635,6 +635,12 @@ body.dark #space {
     width: 8px;
     height: 8px;
   }
+  
+.typing-container {
+    justify-content: flex-start; /* em vez de center */
+}
+  
+  
 }
 
 
@@ -704,6 +710,10 @@ body.dark #space {
 /* ---------- A partir de 1024px ---------- */
 @media (min-width: 1025px) {
 
+  .typing-container {
+      justify-content: flex-start; /* em vez de center */
+  }
+  
   .projects {
     display: flex;
     flex-direction: column;
