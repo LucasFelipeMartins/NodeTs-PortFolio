@@ -1,0 +1,719 @@
+/* ================= RESET & BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0b1120;
+  --bg-light: #f8fafc;
+  --card-dark: #111827;
+  --card-light: #ffffff;
+  --primary: #38bdf8;
+  --text-dark: #e5e7eb;
+  --text-light: #0f172a;
+  --border: rgba(255,255,255,0.08);
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ================= THEME ================= */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* ================= THEME TOGGLE ICON ================= */
+.theme-toggle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.theme-toggle i {
+  position: absolute;
+  font-size: 20px;
+  color: var(--primary);
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* estado padrão (dark) */
+body.dark .theme-toggle .ri-sun-fill {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+body.dark .theme-toggle .ri-moon-fill {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* estado light */
+body.light .theme-toggle .ri-moon-fill {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+body.light .theme-toggle .ri-sun-fill {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle:hover {
+  background: var(--primary);
+}
+
+.theme-toggle:hover i {
+  color: #000;
+}
+
+
+/* ================= HEADER ================= */
+.top-header {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: inherit;
+  font-size: 20px;
+  margin-right: 14px;
+  transition: 
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* GitHub */
+.social-icons a:hover .ri-github-fill {
+  color: #ffffff;
+}
+
+.social-icons a:hover:has(.ri-github-fill) {
+  background: #000000;
+  transform: translateY(-4px);
+}
+
+/* LinkedIn */
+.social-icons a:hover .ri-linkedin-fill {
+  color: #ffffff;
+}
+
+.social-icons a:hover:has(.ri-linkedin-fill) {
+  background: #0a66c2;
+  transform: translateY(-4px);
+}
+
+/* WhatsApp */
+.social-icons a:hover .ri-whatsapp-fill {
+  color: #ffffff;
+}
+
+.social-icons a:hover:has(.ri-whatsapp-fill) {
+  background: #25d366;
+  transform: translateY(-4px);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.controls button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.75);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px;
+}
+
+body.light .navbar {
+  background: rgba(248, 250, 252, 0.85);
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 30px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text{
+
+    margin-top: 20px;
+    font-size: 18px;
+
+}
+
+.about img {
+  width: 300px;         /* largura fixa */
+  height: 300px;        /* altura fixa igual à largura */
+  object-fit: cover;    /* garante que a imagem preencha o círculo sem deformar */
+  border-radius: 50%;   /* mantém círculo perfeito */
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.about h1 span {
+  color: var(--primary);
+}
+
+#typing {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+/* ================= PROJECTS ================= */
+.projects {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: 800px; /* ajuste conforme a altura do banner */
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+.carousel-item {
+  min-width: 100%;   /* cada slide ocupa exatamente 100% */
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;    /* impede encolher */
+}
+
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche todo o banner mantendo proporção */
+}
+
+.carousel-item a {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.carousel-item a:hover {
+  background: var(--primary-dark);
+}
+
+/* Contêiner das barrinhas */
+.carousel-dots {
+  position: absolute;
+  bottom: 10px; /* mais abaixo do que antes (antes era 20px) */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10; /* garante que fique acima dos banners */
+}
+
+/* Cada dot */
+.carousel-dots .dot {
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Dot ativa */
+.carousel-dots .dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+/* ================= SKILLS ================= */
+.skills {
+  padding: 20px 60px;
+  text-align: center;
+  background: var(--bg-alt);
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+/* GRID FIXA 4x5 */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto); /* 5 colunas fixas */
+  grid-template-rows: repeat(4, auto);  /* 4 linhas */
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* CARD INDIVIDUAL */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: default;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill i {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.skill span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+}
+
+.skill::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.skill:hover::before {
+  opacity: 1;
+}
+
+
+/* ================= FOOTER ================= */
+footer {
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  border-top: 2px solid var(--border);
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+footer .footer-social{
+
+    margin-bottom: 20px;
+
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.footer-social .social-icons a {
+  font-size: 28px;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+  transform: translateY(-4px);
+}
+
+/* Contato */
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-btn:hover {
+  background: #fff;
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.contact-btn.linkedin {
+  background: #0a66c2;
+}
+
+.contact-btn.linkedin:hover {
+  color: #fff;
+}
+
+/* Créditos */
+.footer-info p {
+  font-size: 0.85rem;
+  margin: 5px 0;
+}
+
+.footer-info .highlight {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+
+/* ================= SPACE BACKGROUND ================= */
+#space {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.dark #space {
+  opacity: 1;
+}
+
+
+/* ================= TECH ANIMATION ================= */
+.tech-wrapper {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.tech-prefix {
+  color: inherit;
+  opacity: 0.8;
+}
+
+#tech-animated {
+  color: var(--primary);
+  font-weight: 600;
+  position: relative;
+  min-width: 80px;
+  animation: techFade 2s ease-in-out infinite;
+}
+
+@keyframes techFade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* ================= TYPING EFFECT ================= */
+.typing-container {
+  margin-top: 14px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.typing-text {
+  color: var(--primary);
+  min-width: 180px;
+}
+
+.cursor {
+  margin-left: 1px;
+  color: var(--primary);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ---------- Celulares pequenos (a partir de 0px) ---------- */
+.footer h3 {
+  font-size: 1.1rem;
+}
+.contact-btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+.footer-social .social-icons a {
+  font-size: 24px;
+}
+.footer-info p {
+  font-size: 0.75rem;
+}
+
+.highlight a{
+
+  color: var(--primary);
+
+}
+
+/* ---------- A partir de 600px ---------- */
+@media (min-width: 600px) {
+
+  .projects {
+    width: 100%;
+    height: 500px;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
+  }
+
+  .carousel-item a {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  .carousel-dots {
+    margin-top: 10px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+/* ---------- A partir de 768px ---------- */
+@media (min-width: 768px) {
+
+  .carousel-item a {
+    bottom: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+
+  .controls {
+    gap: 12px;
+  }
+
+  .navbar {
+    gap: 20px;
+    padding: 14px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .about {
+    padding: 80px 25px;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    gap: 6px;
+  }
+
+  .skills {
+    padding: 60px 25px;
+    gap: 18px;
+  }
+
+  .skill {
+    padding: 20px 8px;
+  }
+
+  footer {
+    padding: 50px 25px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-social .social-icons {
+    gap: 15px;
+  }
+}
+
+
+/* ---------- A partir de 1024px ---------- */
+@media (min-width: 1025px) {
+
+  .typing-container {
+      justify-content: flex-start; /* em vez de center */
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    height: 800px; /* ajuste conforme a altura do banner */
+  }
+
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio | Full Stack</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body class="dark">
+<canvas id="space"></canvas>
+
+<header class="top-header">
+  <!-- Redes sociais -->
+  <div class="social-icons">
+    <a href="https://github.com/LucasFelipeMartins/LucasFelipeMartins" target="_blank"><i class="ri-github-fill"></i></a>
+    <a href="https://www.linkedin.com/in/lucas-felipe-martins-0a18412b8/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="ri-linkedin-fill"></i></a>
+    <a href="#" target="_blank"><i class="ri-whatsapp-fill"></i></a>
+  </div>
+
+  <!-- Controles -->
+  <div class="controls">
+    <!-- Tema Dark / Light -->
+    <button id="themeBtn" class="theme-toggle">
+        <i class="ri-moon-fill"></i>
+        <i class="ri-sun-fill"></i>
+    </button>
+
+    <!-- Idioma -->
+    <div class="lang">
+      <button onclick="setLang('pt')">PT</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Barra de navegação fixa -->
+<nav class="navbar">
+  <a href="#about" data-i18n="about">Sobre mim</a>
+  <a href="#projects" data-i18n="projects">Projetos</a>
+  <a href="#skills" data-i18n="skills">Habilidades</a>
+  <a href="#contact" data-i18n="contact">Contato</a>
+</nav>
+
+<!-- Sobre mim -->
+<section id="about" class="about">
+  <img src="assets/profile.jpg.jpeg" alt="Foto de perfil">
+  <div>
+    <h1 data-i18n="title">Programador <span>FULL STACK</span></h1>
+    <div class="typing-container">
+      <span class="typing-text"></span>
+      <span class="cursor">|</span>
+    </div>
+    <div class="about-text">
+      <p data-i18n="about_text">
+        Sou um desenvolvedor Full Stack especialista em criar soluções eficientes e escalavel.
+        Gosto de trabalhar com tecnologias modernas e sempre busco aprender algo novo.
+        Minhas qualidades incluem raciocinio logico, resolução de problemas e trabalho em equipe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Projetos / Carrossel -->
+<section id="projects" class="projects">
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <img src="assets/projeto1.png" alt="Projeto 1">
+        <a href="#" target="_blank">GitHub</a>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/projeto2.png" alt="Projeto 2">
+        <a href="#" target="_blank">GitHub</a>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/projeto3.png" alt="Projeto 3">
+        <a href="#" target="_blank">GitHub</a>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/projeto1.png" alt="Projeto 1">
+        <a href="#" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots fora do carrossel, abaixo dos slides -->
+  <div class="carousel-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+  </div>
+</section>
+
+
+<!-- Skills -->
+<section id="skills" class="skills">
+  <h2 data-i18n="skills_title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+    <div class="skill"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+    <div class="skill"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind</span></div>
+    <div class="skill"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+    <div class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+
+    <div class="skill"><i class="devicon-react-original colored"></i><span>React</span></div>
+    <div class="skill"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+    <div class="skill"><i class="devicon-nextjs-original colored"></i><span>Next.js</span></div>
+    <div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+    <div class="skill"><i class="devicon-adonisjs-original colored"></i><span>Adonis</span></div>
+
+    <div class="skill"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+    <div class="skill"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+    <div class="skill"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+    <div class="skill"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+    <div class="skill"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+
+    <div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+    <div class="skill"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+    <div class="skill"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+    <div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+    <div class="skill"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+  </div>
+</section>
+
+<!-- Contato / Rodapé -->
+<footer id="contact">
+  <div class="footer-container">
+
+    <!-- Redes sociais -->
+    <div class="footer-social">
+      <h3 data-i18n="footer_connect">Conecte-se comigo</h3>
+      <div class="social-icons">
+        <a href="https://github.com/LucasFelipeMartins/LucasFelipeMartins" target="_blank"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/lucas-felipe-martins-0a18412b8/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="ri-linkedin-fill"></i></a>
+        <a href="https://wa.me/seunumerodowhatsapp" target="_blank"><i class="ri-whatsapp-fill"></i></a>
+      </div>
+    </div>
+
+    <!-- Contato direto -->
+    <div class="footer-contact">
+      <h3 data-i18n="contact_title">Entre em contato:</h3>
+      <a href="mailto:lucasfelipemartins789@gmail.com" class="contact-btn" data-i18n="contact_email_btn">Email</a>
+      <a href="https://www.linkedin.com/in/lucas-felipe-martins-0a18412b8/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-btn linkedin" data-i18n="contact_linkedin_btn">LinkedIn</a>
+    </div>
+
+    <!-- Créditos -->
+    <div class="footer-info">
+      <p data-i18n="footer_rights">© 2026 Lucas Felipe. Todos os direitos reservados.</p>
+      <p data-i18n="footer_created">Desenvolvido por <span class="highlight"><a href="https://github.com/LucasFelipeMartins/LucasFelipeMartins">Lucas Felipe Martins</a></span></p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
