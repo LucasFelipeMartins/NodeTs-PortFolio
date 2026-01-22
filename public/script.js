@@ -15,7 +15,7 @@ function toggleTheme() {
 themeBtn.addEventListener("click", toggleTheme);
 
 /* ================= TYPING EFFECT ================= */
-const technologies = ["Node.js","TypeScript","Java","PHP","React","PostgreSQL, Python"];
+const technologies = ["Node.js","TypeScript","Java","PHP","React","PostgreSQL","Python"];
 const typingText = document.querySelector(".typing-text");
 
 let techIndex = 0, charIndex = 0, isDeleting = false;
